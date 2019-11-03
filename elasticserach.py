@@ -8,10 +8,10 @@ es = Elasticsearch()
 #es.indices.delete(index="images_selection")
 
 
-pickle_in = open('folder1//im2keywords.pickle','rb')
+pickle_in = open('folder1/im2keywords.pickle','rb')
 im2keywords = pickle.load(pickle_in)
 url2description=[]
-data_dir='folder1//im2keywords'
+data_dir='folder1/im2keywords'
 for i in range(1,3):
     path = data_dir +str(i)+'.pickle'
     pickle_in = open(path,"rb")
