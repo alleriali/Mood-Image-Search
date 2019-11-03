@@ -10,8 +10,14 @@ es = Elasticsearch()
 
 pickle_in = open('../../data/folder1//im2keywords.pickle','rb')
 im2keywords = pickle.load(pickle_in)
-pickle_large_in = open('folder1/url2description.pickle','rb')
-url2description = pickle.load(pickle_large_in)
+url2description=[]
+data_dir='/folder1//im2keywords'
+for i in range(1,3):
+    path = data_dir +str(i)+'.pickle'
+    pickle_in = open(path,"rb")
+    sub_url2description = pickle.load(pickle_in)
+    for url, description in sub_url2description.items():
+        url2description[url] = description
 
 
 def insert_data(im2attributes):
